@@ -1,28 +1,18 @@
-#ifndef GAME_H
-#define GAME_H
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <ctype.h>
-
-#define MAX_ROOMS 5
-#define MAX_ITEMS 5
-#define INVENTORY_CAPACITY 5
-#define MAX_INPUT_SIZE 100
+#ifndef HWDEC12_H
+#define HWDEC12_H
 
 // Structures
-typedef struct
+typedef struct Room
 {
     char *description;
-    int up, down, left, right;  // Room connections
-    char **items;               // Items in the room
-    int itemCount;              // Number of items in the room
-    char *creature;             // Creature name
-    int creatureHealth;         // Creature health
+    int up, down, left, right; // Room connections
+    char **items;              // Items in the room
+    int itemCount;
+    char *creature;     // Creature name
+    int creatureHealth; // Creature health
 } Room;
 
-typedef struct
+typedef struct Player
 {
     int health;
     int strength;
@@ -32,9 +22,9 @@ typedef struct
     int currentRoom;
     int hasVisitedTreasureRoom; // Flag to track if the player has visited the Treasure Room
     int hasKilledGoblin;        // Flag to track if the player has killed the goblin
-    int hasArmor;               // Flag to track if the player has armor
-    int hasKilledWitch;         // Flag to track if the player has killed the witch
-    int hasKilledFinalBoss;     // Flag to track if the player has killed the final boss
+    int hasArmor;
+    int hasKilledWitch;
+    int hasKilledFinalBoss;
 } Player;
 
 // Function Prototypes
