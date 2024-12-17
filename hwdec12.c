@@ -11,32 +11,6 @@
 #define INVENTORY_CAPACITY 5
 #define MAX_INPUT_SIZE 100
 
-// Structures
-typedef struct
-{
-    char *description;
-    int up, down, left, right; // Room connections
-    char **items;              // Items in the room
-    int itemCount;
-    char *creature;     // Creature name
-    int creatureHealth; // Creature health
-} Room;
-
-typedef struct
-{
-    int health;
-    int strength;
-    int inventoryCapacity;
-    char **inventory;
-    int inventoryCount;
-    int currentRoom;
-    int hasVisitedTreasureRoom; // Flag to track if the player has visited the Treasure Room
-    int hasKilledGoblin;        // Flag to track if the player has killed the goblin
-    int hasArmor;
-    int hasKilledWitch;
-    int hasKilledFinalBoss;
-} Player;
-
 // Global Variables
 Room rooms[MAX_ROOMS];
 Player player;
